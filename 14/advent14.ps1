@@ -66,11 +66,3 @@ while ($nextSearch.Length -gt 0) {
 }
 
 Write-Output $relatedToGold.Count
-
-
-<#
-set done flag to false
-get next round:
-    if current item breaks down, add the broken down ones and set done flag
-    if current item does not break down, add the current item to the finished list
-#>
