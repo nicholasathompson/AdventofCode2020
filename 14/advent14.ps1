@@ -53,14 +53,14 @@ $nextSearch = [System.Collections.ArrayList]$BagDictionary["shiny gold"]
 
 while ($nextSearch.Length -gt 0) {
     $currentSearch = [System.Collections.ArrayList]$nextSearch.Clone()
-    $x =$nextSearch.Clear()
+    $nextSearch.Clear() | Out-Null
     foreach ($item in $currentSearch) {
-        $a = $relatedToGold.Add($item)
+        $relatedToGold.Add($item) | Out-Null
         if(-not $BagDictionary[$item]) {
             continue
         }
         foreach ($subBagColor in $BagDictionary[$item]) {
-            $y = $nextSearch.Add($subBagColor)
+            $nextSearch.Add($subBagColor) | Out-Null
         }
     }
 }
